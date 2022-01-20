@@ -1,0 +1,27 @@
+{{ template "header"}}
+<main>
+    <form action="/insertClothing" method="post">
+        <fieldset>
+            <legend>Add Clothing</legend>
+
+            <label for="">Nombre</label>
+            <input type="text" name="name" required>
+
+            <label for="">Marca</label>
+            <input type="text" name="breed" required>
+
+            <label for="">Costo</label>
+            <input type="number" step="any" name="cost" required>
+
+            <label for="">Costo a publico</label>
+            <input type="number" step="any" name="customerCost" required>
+
+            <label for="">Existencia</label>
+            <input type="number" name="existence" required>
+
+        </fieldset>
+
+        <button>Guardar</button>
+    </form>
+</main>
+{{template "footer"}}
