@@ -1,0 +1,30 @@
+{{ template "header"}}
+    <main>
+        <form  method="post" action="/updatedClothing">
+            <fieldset>
+                <legend>Editar Clothing</legend>
+    
+                <label for="">Id Producto</label>
+                <input type="text" disabled="disabled" value={{.Id}}>
+
+                <label for="">Nombre</label>
+                <input type="text" name="name" value={{.Name}} >
+
+                <label for="">Marca</label>
+                <input type="text" name="breed" value={{.Breed}} >
+    
+                <label for="">Costo</label>
+                <input type="number" step="any" name="cost" value={{.Cost}} >
+    
+                <label for="">Costo a publico</label>
+                <input type="number" step="any" name="customerCost"  value={{.CustomerCost}} >
+    
+                <label for="">Existencia</label>
+                <input type="number" name="existence" value={{.Existence}} >
+    
+            </fieldset>
+    
+            <button>Modificar Guardar</button>
+        </form>
+    </main>
+{{ template "footer"}}

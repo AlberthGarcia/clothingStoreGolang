@@ -1,5 +1,9 @@
 {{ template "header"}}
     <main>
+        <form action="/searchClothing" method="POST">
+            <input type="text" name="search"> 
+            <a href="searchClothing">Buscar Ropa</a>
+        </form>
         <table>
             <caption>List Clothing</caption>
             <thead>
@@ -7,16 +11,26 @@
                 <th>Nombre Prenda</th>
                 <th>Marca</th>
                 <th>Costo</th>
+                <th>Costo a publico</th>
                 <th>Existencia</th>
             </thead>
             <tbody>
+                {{ range. }}
                 <tr>
-                    <td>1</td>
-                    <td>Sueter de navidad</td>
-                    <td>Gucci</td>
-                    <td>150.50</td>
-                    <td>3</td>
+                    <td>{{ .Id}}</td>
+                    <td>{{ .Name}}</td>
+                    <td>{{ .Breed}}</td>
+                    <td>{{ .Cost}}</td>
+                    <td>{{ .CustomerCost}}</td>
+                    <td>{{ .Existence}}</td>
+                    <td>
+                        <a href="/updatedClothes?id={{ .Id }}">Editar</a>
+                        | 
+                        <a href="/deleteClothing?id={{ .Id }}">Borrar</a>
+                    </td>
+
                 </tr>
+                {{ end }}
             </tbody>
         </table>
         <a href="addClothing">Agregar Ropa</a>

@@ -1,0 +1,34 @@
+{{template "header"}}
+    <main>
+        <h1>Ropa encontrada</h1>
+        <table>
+            <caption>List Clothing</caption>
+            <thead>
+                <th>ID</th>
+                <th>Nombre Prenda</th>
+                <th>Marca</th>
+                <th>Costo</th>
+                <th>Costo a publico</th>
+                <th>Existencia</th>
+            </thead>
+            <tbody>
+                {{ range. }}
+                <tr>
+                    <td>{{ .Id}}</td>
+                    <td>{{ .Name}}</td>
+                    <td>{{ .Breed}}</td>
+                    <td>{{ .Cost}}</td>
+                    <td>{{ .CustomerCost}}</td>
+                    <td>{{ .Existence}}</td>
+                    <td>EDITAR{{ .Id}}
+                        <a href="">Editar</a>
+                        | 
+                        <a href="/borrar?id={{ .Id }}">Borrar</a>
+                    </td>
+
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </main>
+{{template "footer"}}
