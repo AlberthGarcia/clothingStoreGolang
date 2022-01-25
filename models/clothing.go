@@ -164,7 +164,8 @@ func UpdatedClothes(rw http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
 
-		idProduct := r.FormValue("id")
+		idProduct := r.URL.Query().Get("id")
+		fmt.Println(idProduct)
 		name := r.FormValue("name")
 		breed := r.FormValue("breed")
 
